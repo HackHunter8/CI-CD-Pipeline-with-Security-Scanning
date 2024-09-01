@@ -10,12 +10,12 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     - name: Use newer blocks (Node.js 20)
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-    - name: Set up Python
+    - name: Set up Python3
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
@@ -25,3 +25,4 @@ jobs:
         pip install -r requirements.txt
     - name:  run tests
       run: python -m unittest discover tests -v
+      
